@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -42,6 +43,9 @@ export default function Index() {
             Remix Docs
           </a>
         </li>
+        {/* <li>
+          <Link to={`/contacts/1`}>Remix docs</Link>
+        </li> */}
       </ul>
     </div>
   );

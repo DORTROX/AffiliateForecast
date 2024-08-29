@@ -1,9 +1,12 @@
 import {
+  Link,
   Links,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import "./tailwind.css";
 
@@ -17,6 +20,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive ? "active" : isPending ? "pending" : ""
+          }
+          to={`/contacts/1`}
+        >
+          Remix docs
+        </NavLink>
+
         {children}
         <ScrollRestoration />
         <Scripts />
