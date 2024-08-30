@@ -19,16 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="dark">
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isActive ? "active" : isPending ? "pending" : ""
-          }
-          to={`/contacts/1`}
-        >
-          Remix docs
-        </NavLink>
-
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />
