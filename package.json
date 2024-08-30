@@ -3,9 +3,10 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  
   "scripts": {
-    "build": "cls && remix vite:build",
-    "dev": "cls && remix vite:dev",
+    "build": "clear && remix vite:build",
+    "dev": "clear && remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"

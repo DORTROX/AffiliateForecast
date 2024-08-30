@@ -1,40 +1,68 @@
-# Welcome to Remix!
+## Video Reference (Loom)
+- [Loom Video](https://www.loom.com/share/0b59ee2a1b72490fb3818a45b3fc0219)
 
-- 📖 [Remix docs](https://remix.run/docs)
+## Features
 
-## Development
+- **Remix**: A powerful framework for building modern web applications.
+- **Vite**: A fast build tool that enhances the development experience.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Shadcn**: A collection of reusable components and utilities to speed up your development.
 
-Run the dev server:
+## Getting Started
 
-```shellscript
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+- **Node.js**: Ensure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+To start the development server, use the following command:
+
+```bash
 npm run dev
 ```
 
-## Deployment
+**Note:** This command will execute `clear` to clear the terminal screen before starting the development server. On Windows, you should modify this to `cls` to ensure compatibility. 
 
-First, build your app for production:
+Here's how you can adjust it:
 
-```sh
-npm run build
-```
+- On **Windows**, replace `clear` with `cls` in your `package.json` scripts.
 
-Then run the app in production mode:
+  **package.json** example:
 
-```sh
-npm start
-```
+  ```json
+  {
+    "scripts": {
+      "dev": "cls && remix vite:dev"
+    }
+  }
+  ```
 
-Now you'll need to pick a host to deploy it to.
+- On **Unix-based systems** (Linux, macOS), you can use:
 
-### DIY
+  **package.json** example:
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+  ```json
+  {
+    "scripts": {
+      "dev": "clear && remix vite:dev"
+    }
+  }
+  ```
