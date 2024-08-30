@@ -210,9 +210,7 @@ export default function Index() {
                     <LabelList
                       position="top"
                       offset={12}
-                      className="fill-foreground"
-                      fontSize={12}
-                      style={{ display: "none" }}
+                      className="fill-foreground text-[0px] sm:text-sm"
                       formatter={(value: number) => `$${value.toFixed(0)}`}
                     />
                   </Bar>
