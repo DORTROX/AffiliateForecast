@@ -14,6 +14,7 @@ import {
 import { Label } from "~/components/ui/label";
 import { useEffect, useState } from "react";
 import { Input } from "~/components/ui/input";
+import { cn } from "~/lib/utils";
 
 const chartConfig = {
   payout: {
@@ -65,14 +66,14 @@ export default function Index() {
   }, [sliderValue]);
 
   return (
-    <div className="grid grid-flow-row grid-row-4 gap-5 max-h-screen">
-      <div className="row-span-1 text-3xl sm:text-balance text-center font-bold text-gray-800 w-2/6 m-auto">
+    <div className="grid grid-flow-row gap-5 max-h-screen p-4">
+      <div className="text-3xl sm:text-4xl text-center font-bold text-gray-800 w-full">
         <h1>Calculate Your Recurring Passive Income</h1>
       </div>
-      <div className="grid sm:grid-cols-3 sm:row-span-2 gap-5">
-        <div className="col-span-1 flex flex-col justify-center items-center">
-          <div className="sm:w-2/3 mx-2 flex flex-col gap-5">
-            <h1 className="text-pretty">
+      <div className="grid lg:grid-cols-3 gap-5">
+        <div className="flex flex-col justify-center items-center">
+          <div className="sm:w-2/3 m-auto mx-2 flex flex-col gap-5">
+            <h1 className="text-pretty text-center">
               Add in your expected referrals to see how much you could earn as{" "}
               <span className="font-bold">Sunvoy Affiliate</span> in just 1 year
             </h1>
@@ -81,7 +82,7 @@ export default function Index() {
                 <Label htmlFor="perPerson">Referred Customers per month</Label>
                 <Input
                   type="number"
-                  className="max-w-[5vw] text-center"
+                  className="max-w-[15vw] md:max-w-[5vw] text-center"
                   min={1}
                   max={10}
                   value={sliderValue.referredCustomer}
@@ -108,10 +109,10 @@ export default function Index() {
             </div>
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2 justify-between">
-                <Label htmlFor="extProject">Avg. new projects per month</Label>
+                <Label htmlFor="newProject">Avg. new projects per month</Label>
                 <Input
                   type="number"
-                  className="max-w-[5vw] text-center"
+                  className="max-w-[15vw] md:max-w-[5vw] text-center"
                   min={5}
                   max={50}
                   value={sliderValue.newProject}
@@ -142,10 +143,9 @@ export default function Index() {
                 <Label htmlFor="extProject">Avg. existing projects</Label>
                 <Input
                   type="number"
-                  className="max-w-[5vw] text-center"
-                  min={5}
+                  className="max-w-[15vw] md:max-w-[5vw] text-center"
                   value={sliderValue.existingProject}
-                  max={50}
+                  max={10000}
                   onChange={(e) =>
                     setSliderValue((prev) => ({
                       ...prev,
@@ -179,7 +179,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
           <Card>
             <CardContent>
               <ChartContainer config={chartConfig} className="w-full">
@@ -212,6 +212,7 @@ export default function Index() {
                       offset={12}
                       className="fill-foreground"
                       fontSize={12}
+                      style={{ display: "none" }}
                       formatter={(value: number) => `$${value.toFixed(0)}`}
                     />
                   </Bar>
@@ -221,10 +222,10 @@ export default function Index() {
           </Card>
         </div>
       </div>
-      <div className="row-span-1 sm:text-pretty text-center text-gray-500 sm:w-1/2 m-auto">
+      <div className="text-pretty text-center text-gray-500 w-full sm:w-1/2 m-auto">
         <h1>
-          Calulator are based on the number of Customers you refer each month
-          annd avg. project volume. Factor in our churns and this bring you to
+          Calculator is based on the number of Customers you refer each month
+          and avg. project volume. Factor in our churns and this brings you to
           estimated total passive future income.
         </h1>
       </div>
