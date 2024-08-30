@@ -3,10 +3,9 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
-  
   "scripts": {
-    "build": "clear && remix vite:build",
-    "dev": "clear && remix vite:dev",
+    "build": "cls && remix vite:build",
+    "dev": "cls && remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
@@ -28,7 +27,8 @@
     "recharts": "^2.12.7",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "tiny-invariant": "^1.3.3"
+    "tiny-invariant": "^1.3.3",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.11.2",
