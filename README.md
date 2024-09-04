@@ -24,7 +24,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
    ```bash
    git clone https://github.com/DORTROX/AffiliateForecast.git
-   cd your-repo
+   cd AffiliateForecast
    ```
 
 2. **Install dependencies:**
